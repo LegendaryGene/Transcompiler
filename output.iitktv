@@ -1,0 +1,14 @@
+start, 0, rm_1
+rm_1, 0, rm_2
+rm_2, 0rm_3
+rm_3, 0, airstrip_land_2
+airstrip_land_2, 0, oat_stage[1]
+oat_stage, 1, events_2
+events_2_f, 1, rm_1
+rm_2, 1rm_3
+rm_3, 1, oat_stage[-1]
+events_t, 0, oat_stage[2]
+oat_stage, 2, nankari_gate_out_2
+nankari_gate_out_2, 2, nankari_gate_out_2
+nankari_gate_out_2, 2, nankari_gate_out_2
+nankari_gate_out_2, 2, finish
