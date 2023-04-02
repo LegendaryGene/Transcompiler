@@ -3,7 +3,30 @@
 using namespace std;
 
 void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond, int &mem_1, int &mem_2){
+
+    // need to add negative integers as well                        ####  IMPORTANT
+    if(n == 0 ){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
     if(n == 1){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
         return;
     }
     if(n == 2){
@@ -105,11 +128,14 @@ void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond
     cout << "hall_13_3, " << cond++ << ", oat_stage[1]" << endl;
     cout << "oat_stage" << ", " << cond << ", kd_3" << endl;
     prev_loc = "kd_3";
-    cout << prev_loc << ", " << cond << ", kd_1" << endl;
+    cout << prev_loc << ", " << cond << ", hall_13_3" << endl;
+    cout << "hall_13_3, " << cond << ", hall_13_2" << endl;
+    cout << "hall_13_2, " << cond << ", kd_1" << endl;
     cout << "kd_1, " << cond << ", kd_2" << endl;
     cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
     cout << "oat_stage, " << cond << ", kd_3" << endl;
-    prev_loc = "kd_3";
+    cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
+    prev_loc = "oat_stage";
     max_cond = max(cond, max_cond);
     top++;
     mem_1++;
@@ -215,7 +241,7 @@ void pop(int &top, int &cond, int &mem_1, int &mem_2, string &prev_loc, int &max
 
 int main(int argc, char* argv[]){
     freopen(argv[1], "r", stdin);
-    freopen("output.iitktv", "w", stdout);
+    freopen("output.iitktvlr", "w", stdout);
 
     vector<string> stk_code;
     string c;
@@ -233,7 +259,8 @@ int main(int argc, char* argv[]){
             continue;
         }
 
-        else if (isdigit(code_word[0])) {
+        else if (isdigit(code_word[0]) ) {    // Has a corner case for negative numbers
+
             // can be optimized by checking quantity of operators & numbers being used
             int num;
             sscanf(code_word.c_str(), "%d", &num);
