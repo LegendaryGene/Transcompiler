@@ -21,7 +21,8 @@ void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond
         cout << prev_loc << ", " << cond << ", rm_1" << endl;
         cout << "rm_1, " << cond << ", rm_2" << endl;
         cout << "rm_2, " << cond << ", rm_3" << endl;
-        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
         prev_loc="oat_stage";
         mem_1++;
         mem_2++;
@@ -30,10 +31,36 @@ void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond
         return;
     }
     if(n == 2){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
         return;
     }
     if(n == 3){
-        return;
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;    
     }
     vector<int> v;
     while(n){
@@ -259,42 +286,76 @@ int main(int argc, char* argv[]){
             continue;
         }
 
-        else if (isdigit(code_word[0]) ) {    // Has a corner case for negative numbers
-
+        else if (isdigit(code_word[0])) {
             // can be optimized by checking quantity of operators & numbers being used
             int num;
             sscanf(code_word.c_str(), "%d", &num);
+
+            // if top>0
             if(top == -1){
-                cout << prev_loc << "," << cond << ", iit_gate_in_1" << endl;
-                cout << "iit_gate_in_1, " << cond << ", oat_stage[1]" << endl;
+                push_n_to_stack(num,prev_loc,cond,top,max_cond,mem_1,mem_2);
+                cout << prev_loc << ", " << cond << ", kd_1" << endl;
+                cout << "kd_1, " << cond << ", kd_2" << endl;
+                cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
+                cout << "oat_stage, " << cond << ", kd_3" << endl;
+                cout << "kd_3, " << cond << ", mt_1_3" << endl;
+                cout << "mt_1_3, " << cond << ", hall_13_3" << endl;
+                cout << "hall_13_3, " << cond++ << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
-                cond++;
-                top++;
+                mem_1--;
+                mem_2--;
                 max_cond = max(max_cond, cond);
             }
             else if(top == 0){
-                cout << prev_loc << ", " << cond << ", iit_gate_in_2" << endl;
-                cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
+                push_n_to_stack(num,prev_loc,cond,top,max_cond,mem_1,mem_2);
+                cout << prev_loc << ", " << cond << ", kd_1" << endl;
+                cout << "kd_1, " << cond << ", kd_2" << endl;
+                cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
+                cout << "oat_stage, " << cond << ", kd_3" << endl;
+                cout << "kd_3, " << cond << ", mt_2_3" << endl;
+                cout << "mt_2_3, " << cond << ", hall_13_3" << endl;
+                cout << "hall_13_3, " << cond++ << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
-                cond++;
-                top++;
+                mem_1--;
+                mem_2--;
                 max_cond = max(max_cond, cond);
             }
             else{
-                cout << prev_loc << " ," << cond << ", rm_1" << endl;
-                cout << "rm_1, " << cond << ", rm_2" << endl;
-                cout << "rm_2, " << cond << ", rm_3" << endl;
-                cout << "rm_3" << ", " << cond << ", iit_gate_in_2" << endl;
-                cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
-                prev_loc = "oat_stage";
-                mem_1++;
-                mem_2++;
-                cond++;
-                top++;
-                max_cond = max(max_cond, cond);
+                push_n_to_stack(num,prev_loc,cond,top,max_cond,mem_1,mem_2);
             }
+
+            // if(top == -1){
+            //     cout << prev_loc << "," << cond << ", iit_gate_in_1" << endl;
+            //     cout << "iit_gate_in_1, " << cond << ", oat_stage[1]" << endl;
+            //     prev_loc = "oat_stage";
+            //     cond++;
+            //     top++;
+            //     max_cond = max(max_cond, cond);
+            // }
+            // else if(top == 0){
+            //     cout << prev_loc << ", " << cond << ", iit_gate_in_2" << endl;
+            //     cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
+            //     prev_loc = "oat_stage";
+            //     cond++;
+            //     top++;
+            //     max_cond = max(max_cond, cond);
+            // }
+            // else{
+            //     cout << prev_loc << " ," << cond << ", rm_1" << endl;
+            //     cout << "rm_1, " << cond << ", rm_2" << endl;
+            //     cout << "rm_2, " << cond << ", rm_3" << endl;
+            //     cout << "rm_3" << ", " << cond << ", iit_gate_in_2" << endl;
+            //     cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
+            //     prev_loc = "oat_stage";
+            //     mem_1++;
+            //     mem_2++;
+            //     cond++;
+            //     top++;
+            //     max_cond = max(max_cond, cond);
+            // }
+
         }
-        
+
         else if(code_word == "add"){
             cout << prev_loc << " ," << cond << ", hall_2" << endl;
             cout << "hall_2, " << cond << ", mt_1_3" << endl;
@@ -326,7 +387,7 @@ int main(int argc, char* argv[]){
             prev_loc = "hall_13_3";
             pop(top, cond, mem_1, mem_2, prev_loc, max_cond);
         }
-        
+
         else if(code_word == "pop"){
             pop(top, cond, mem_1, mem_2, prev_loc, max_cond);
         }
@@ -337,32 +398,32 @@ int main(int argc, char* argv[]){
 
         else if(code_word == "input"){
             if(top == -1){
-                cout <<  prev_loc << ", " << cond << ", iit_gate_in_1" << endl;
+                cout << prev_loc << "," << cond << ", iit_gate_in_1" << endl;
                 cout << "iit_gate_in_1, " << cond << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
-                top++;
                 cond++;
+                top++;
                 max_cond = max(max_cond, cond);
             }
             else if(top == 0){
-                cout<<  prev_loc << ", " << cond << ", iit_gate_in_2" << endl;
+                cout << prev_loc << ", " << cond << ", iit_gate_in_2" << endl;
                 cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
-                top++;
                 cond++;
+                top++;
                 max_cond = max(max_cond, cond);
             }
             else{
-                cout << prev_loc << ", " << cond << ", iit_gate_2" << endl;
-                cout << "iit_gate_2, " << cond << ", rm_1" << endl;
+                cout << prev_loc << " ," << cond << ", rm_1" << endl;
                 cout << "rm_1, " << cond << ", rm_2" << endl;
                 cout << "rm_2, " << cond << ", rm_3" << endl;
-                cout << "rm_3, " << cond << ", oat_stage[1]" << endl;
+                cout << "rm_3" << ", " << cond << ", iit_gate_in_2" << endl;
+                cout << "iit_gate_in_2, " << cond << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
                 mem_1++;
                 mem_2++;
-                top++;
                 cond++;
+                top++;
                 max_cond = max(max_cond, cond);
             }
         }
@@ -405,7 +466,7 @@ int main(int argc, char* argv[]){
                 cout << "rm_3, " << cond << ", oat_stage[1]" << endl;
                 prev_loc = "oat_stage";
                 cond++;
-                top++; 
+                top++;
                 max_cond = max(max_cond, cond);
             }
             else{
@@ -508,9 +569,27 @@ int main(int argc, char* argv[]){
             rev_swap(top, cond, mem_1, mem_2, prev_loc, max_cond);
         }
 
-        else if(code_word == "rev"){
+         else if(code_word == "rev"){
             int tmp1 = mem_1;
-            int tmp_2 = mem_2;
+
+//          ###############################################################################################
+            // for internal while 
+//          ###############################################################################################
+
+            // while(tmp1>(mem_1/2)){
+            //     cout << prev_loc << ", " << cond << ", kd_1" << endl;
+            //     cout << "kd_1, " << cond << ", oat_stage[1]" << endl;
+            //     prev_loc = "oat_stage";
+            //     cond++;
+            //     tmp1--;
+            // }
+
+            // cout << "oat_stage, " << cond << ", pronite_1" << endl;
+            // prev_loc = "pronite_1";
+
+//          ###############################################################################################
+            // for internal while 
+//          ###############################################################################################
 
             while(tmp1>0){
                 cout << prev_loc << ", " << cond << ", kd_1" << endl;
@@ -519,8 +598,17 @@ int main(int argc, char* argv[]){
                 cond++;
                 tmp1--;
             }
-            max_cond = max(cond, max_cond);
-            for(int i=0; ((mem_2+1)/2)>i; i++)
+            // ---------------for debugging-----------------------
+            // cout << "oat_stage, " << cond << ", iit_gate_out_1" << endl;
+            // cout << "iit_gate_out_1, " << cond << ", iit_gate_out_2" << endl;
+            // cout << "iit_gate_out_2, " << cond++ << ", oat_stage[1]" << endl;
+
+            int len = (mem_1+1)/2;
+            if(mem_2%2==1){
+                len=(mem_1/2)+1;
+            }
+
+            for(int i=0; len-1>i; i++)
             {
                 rev_swap(top, cond, mem_1, mem_2, prev_loc, max_cond);
                 cout << prev_loc << ", " << cond << ", kd_2" << endl;
@@ -528,19 +616,22 @@ int main(int argc, char* argv[]){
                 cout << "rm_1, " << cond << ", oat_stage[1]" << endl;
                 cond++;
             }
+            rev_swap(top, cond, mem_1, mem_2, prev_loc, max_cond);
 
-            for(int i=0 ; ((mem_2+1)/2)>i; i++)
+            for(int i=0 ; len-1>i; i++)
             {
                 cout << "oat_stage, " << cond << ", rm_1" << endl;
                 cout << "rm_1, " << cond << ", rm_2" << endl;
                 cout << "rm_2, " << cond << ", oat_stage[1]" << endl;
                 cond++;
             }
+
             if(mem_2%2==0){
                 cout << "oat_stage, " << cond << ", rm_1" << endl;
                 cout << "rm_1, " << cond << ", oat_stage[1]" << endl;
                 cond++;
             }
+
             prev_loc = "oat_stage";
             max_cond= max(max_cond,cond);
         }
