@@ -101,7 +101,8 @@ void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond
     }
     cout << prev_loc << ", " << cond << ", rm_3" << endl;
     cout << "rm_3, " << cond << ", mt_1_3" << endl;
-    cout << "mt_1_3, " << cond++ << ", oat_stage[1]" << endl;
+    cout << "mt_1_3, " << cond << ", hall_13_3" << endl;
+    cout << "hall_13_3, " << cond++ << ", oat_stage[1]" << endl;
     cout << "oat_stage" << ", " << cond << ", kd_3" << endl;
     prev_loc = "kd_3";
     cout << prev_loc << ", " << cond << ", kd_1" << endl;
