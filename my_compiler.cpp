@@ -60,7 +60,141 @@ void push_n_to_stack(int n, string &prev_loc, int &cond, int &top, int &max_cond
         mem_2++;
         top++;
         max_cond = max(cond, max_cond);
-        return;    
+        return;
+    }
+    if(n == 4){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 5){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 6){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 7){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond << ", southern_labs_2" << endl;
+        cout << "southern_labs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", southern_labs_2" << endl;
+        cout << "southern_labs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 8){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond << ", southern_labs_2" << endl;
+        cout << "southern_labs_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 9){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 10){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond << ", eshop_2" << endl;
+        cout << "eshop_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "eshop_2, " << cond << ", oat_stairs_2" << endl;
+        cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+
+        prev_loc="oat_stage";
+        mem_1++;
+        mem_2++;
+        top++;
+        max_cond = max(cond, max_cond);
+        return;
     }
     vector<int> v;
     while(n){
@@ -678,42 +812,18 @@ int main(int argc, char* argv[]){
 
         else if(code_word == "not"){
             cout << prev_loc << ", " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond <<  ", rm_1" << endl;
             cout << "rm_1, " << cond << ", rm_2" << endl;
-            cout << "rm_2, " << cond << ", oat_stairs_2" << endl;
-            cout << "oat_stairs_2, " << cond << ", oat_stairs_1" << endl;
-            cout << "oat_stairs_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", oat_stairs_1" << endl;
-            cout << "oat_stairs_1, " << cond << ", hall_3" << endl;
-            cout << "hall_3, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", lecture_hall_lt" << endl;
-            cout << "lecture_hall_lt_t, " << cond << ", mt_1_3" << endl;
-            cout << "mt_1_3, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond << ", hall_3" << endl;
-            cout << "lecture_hall_lt_f, " << cond << ", mt_3_1" << endl;
-            cout << "mt_3_1, " << cond << ", southern_labs_1" << endl;
-            cout << "southern_labs_1, " << cond << ", hall_2" << endl;
-            cout << "hall_2, " << cond << ", hall_13_1" << endl;
-            cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond << ", kd_2" << endl;
-            cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
-            cout << "hall_13_1, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond << ", hall_5" << endl;
-            cout << "hall_5, " << cond << ", mt_2_3" << endl;
-            cout << "mt_2_3, " << cond << ", hall_13_3" << endl;
-            cout << "hall_13_3, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", kd_1" << endl;
+            cout << "rm_2, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ",southern_labs_2" << endl;
+            cout << "southern_labs_2, " << cond << ", hall_3" << endl;
+            cout << "hall_3, " << cond << ", southern_labs_1" << endl;
+            cout << "southern_labs_1, " << cond << ", hall_13_2" << endl;
+            cout << "hall_13_2, " << cond << ", kd_2" << endl;
+            cout << "kd_2, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", kd_1" << endl;
             cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
         }
-        
         else if (code_word == "quit"){
             break;
         }
