@@ -2,6 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+
 void debug(int &cond, string &prev_loc, int &max_cond){
     cout << prev_loc << ", " << cond <<  ", pronite_1" << endl;
     cout << "pronite_1, " << cond << ", kd_1" << endl;
@@ -353,40 +355,40 @@ int main(int argc, char* argv[]){
             max_cond = max(cond, max_cond);
         }
 
-        // else if(code_word == "inputascii"){
-        //     cout << prev_loc << ", " << cond << ", rm_2" << endl;
-        //     cout << "rm_2, " << cond << ", airstrip_land_2" << endl;
-        //     cout << "airstrip_land_2, " << cond << ", kd_2" << endl;
-        //     cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", events_2" << endl;
-        //     cout << "events_2_f, " << cond << ", rm_2" << endl;
-        //     cout << "rm_2, " << cond << ", oat_stage[0]" << endl;
-        //     cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", rm_2" << endl;
-        //     cout << "rm_2, " << cond << ", rm_1" << endl;
-        //     cout  << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", events_1" << endl;
-        //     cout << "events_1_f, " << cond << ", oat_stairs_2" << endl;
-        //     cout << "oat_stairs_2, " << cond << ", rm_1" << endl;
-        //     cout << "rm_1, " << cond << ", oat_stage[0]" << endl;
-        //     cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", rm_1" << endl;
-        //     cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", rm_1" << endl;
-        //     cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond <<  ", lecture_hall_lt" << endl;
-        //     cout << "lecture_hall_lt_t, " << cond << ", rm_3" << endl;
-        //     cout << "rm_3, " << cond << ", southern_labs_2" << endl;
-        //     cout << "southern_labs_2, " << cond << ", oat_stage[0]" << endl;
-        //     cout << "lecture_hall_lt_f, " << cond << ", kd_2" << endl;
-        //     cout << "kd_2, " << cond << ", kd_1" << endl;
-        //     cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", kd_1" << endl;
-        //     cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     cout << "oat_stage, " << cond << ", kd_1" << endl;
-        //     cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
-        //     prev_loc = "oat_stage";
-        // }
+        else if(code_word == "inputascii"){
+            cout << prev_loc << ", " << cond << ", pronite_1" << endl;
+            cout << "pronite_1, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond << ", airstrip_land_2" << endl;
+            cout << "airstrip_land_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond << ", rm_2" << endl;
+            cout << "rm_2, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", oat_stage[0]" << endl;
+            // after this loop input will be taken and stored, just need to reverse it now.
+            cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", kd_1" << endl; // mem1--
+            cout << "kd_1, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", mt_3_1" << endl; // mem3=mem1
+            cout << "mt_3_1, " << cond << ", rm_3" << endl; // mem3++
+            cout << "rm_3, " << cond << ", kd_1" << endl; // mem1--
+            cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
+            cout << "events_1_t, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", mt_1_3" << endl;
+            cout << "mt_1_3, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond << ", hall_13_3" << endl;
+            cout << "hall_13_3, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", oat_stage[0]" << endl;
+            cout << "events_1_t, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+            pop(cond, prev_loc, max_cond);
+            prev_loc = "oat_stage";
+        }
 
         else if(code_word == "mod"){
             int temp_cond = cond;
@@ -425,7 +427,7 @@ int main(int argc, char* argv[]){
         else if(code_word == "or"){
             cout << prev_loc << ", " << cond << ", kd_1" << endl;
             cout << "kd_1, " << cond << ", kd_2" << endl;
-            cout << ""
+            // cout << ""
         }
         
         else if (code_word == "quit"){
