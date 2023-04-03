@@ -256,13 +256,6 @@ int main(int argc, char* argv[]){
             continue;
         }
 
-        else if (isdigit(code_word[0])) {
-            // need to add for negative numbers
-            int num;
-            sscanf(code_word.c_str(), "%d", &num);
-            push_n_to_stack(num,prev_loc,cond,max_cond);
-        }
-
         // else if (isdigit(code_word[0])) {
         //     cout << prev_loc << ", " << cond << ", iit_gate_in_1" << endl;
         //     cout << "iit_gate_in_1, " << cond << ", rm_1" << endl;
@@ -272,7 +265,7 @@ int main(int argc, char* argv[]){
         //     prev_loc = "oat_stage";
         //     max_cond = max(max_cond, cond);
         // }
-        
+
         else if(code_word == "add"){
             cout << prev_loc << ", " << cond << ", kd_1" << endl;
             cout << "kd_1, " << cond << ", kd_2" << endl;
@@ -602,11 +595,11 @@ int main(int argc, char* argv[]){
             cout << "kd_1, " << cond << ", kd_2" << endl;
             // cout << ""
         }
-        
+
         else if (code_word == "quit"){
             break;
         }
-        
+
         // else if (code_word == "pointer"){
         //     cout << prev_loc << ", " << cond << ", events_1" << endl;
         //     cout << "events_1_f, " << cond << ", iit_gate_out_1" << endl;
@@ -617,7 +610,28 @@ int main(int argc, char* argv[]){
         //     max_cond = max(cond, max_cond);
         // }
 
+
+        else {    //if (isdigit(code_word[0])) {
+            // need to add for negative numbers
+            int num;
+            sscanf(code_word.c_str(), "%d", &num);
+            if(num<0){
+                num=-1*num;
+                push_n_to_stack(num,prev_loc,cond,max_cond);
+                cout << prev_loc << ", " << cond << ", southern_labs_2" << endl;
+                cout << "southern_labs_2, " << cond << ", kd_1" << endl;
+                cout << "kd_1, " << cond << ", hall_3" << endl;
+                cout << "hall_3, " << cond << ", mt_1_3" << endl;
+                cout << "mt_1_3, " << cond << ", hall_13_3" << endl;
+                cout << "hall_13_3, " << cond << ", rm_1" << endl;
+                cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
+            }
+            else push_n_to_stack(num,prev_loc,cond,max_cond);
+            prev_loc = "oat_stage";
+            max_cond = max(max_cond,cond);
+        }
+
     }
     cout << prev_loc << ", " << cond << ", finish" << endl;
     return 0;
-}   
+}
