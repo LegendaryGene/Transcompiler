@@ -2,7 +2,170 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void push_n_to_stack(int n, string &prev_loc, int &cond,int &max_cond){
 
+    // need to add negative integers as well                        ####  IMPORTANT
+    if(n == 0 ){
+        cout << prev_loc << ", " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 1){
+        cout << prev_loc << ", " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 2){
+        cout << prev_loc << ", " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 3){
+        cout << prev_loc << ", " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    if(n == 4){
+        cout << prev_loc << ", " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", oat_stairs_1" << endl;
+        cout << "oat_stairs_1, " << cond << ", eshop_1" << endl;
+        cout << "eshop_1, " << cond << ", rm_1" << endl;
+        cout << "rm_1, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        prev_loc="oat_stage";
+        max_cond = max(cond, max_cond);
+        return;
+    }
+    vector<int> v;
+    while(n){
+        v.push_back(n%2);
+        n/=2;
+    }
+    cout << prev_loc << ", " << cond << ", oat_stairs_1" << endl;
+    cout << "oat_stairs_1, " << cond << ", oat_stairs_2" << endl;
+    cout << "oat_stairs_2, " << cond << ", hall_2" << endl;
+    prev_loc = "hall_2";
+    if(v[0] == 1 && v[1] == 1){
+        cout << "hall_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", hall_2" << endl;
+        cout << "hall_2, " << cond << ", kd_3" << endl;
+        cout << "kd_3, " << cond << ", kd_2" << endl;  
+        prev_loc = "kd_2";
+    }else if(v[0] == 1 && v[1] == 0){
+        cout << "hall_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", mt_3_1" << endl;
+        cout << "mt_3_1, " << cond << ", kd_3" << endl;
+        prev_loc = "kd_3";
+    }else if(v[0] == 0 && v[1] == 1){
+        cout << "hall_2, " << cond++ << ", oat_stage[1]" << endl;
+        cout << "oat_stage, " << cond << ", rm_3" << endl;
+        cout << "rm_3, " << cond << ", rm_2" << endl;
+        cout << "rm_2, " << cond << ", mt_3_2" << endl;
+        cout << "mt_3_2, " << cond << ", kd_3" << endl;
+        cout << "kd_3, " << cond << ", kd_2" << endl;  
+        prev_loc = "kd_2";
+    }
+    cout << prev_loc << ", " << cond << ", mt_2_3" << endl;
+    cout << "mt_2_3, " << cond++ << ", oat_stage[1]" << endl;
+    cout << "oat_stage, " << cond << ", mt_1_3" << endl;
+    prev_loc = "mt_1_3";
+
+    // Adding the results to m_4;
+    // cout << "oat_stage, " << cond << ", mt_3_2" << endl;
+    // cout << "mt_3_2, " << cond << ", rm_3" << endl;
+    // cout << "rm_3, " << cond << ", mt_2_3" << endl;
+    // cout << "mt_2_3, " << cond << ", hall_2" << endl;
+    // cout << "hall_2, " << cond << ", kd_3" << endl;
+    // cout << "kd_3, " << cond << ", mt_2_3" << endl;
+    // cout << "mt_2_3, " << cond++ << ", oat_stage[1]" << endl;
+
+    // Multiply and put result to m_1
+    // cout << "mt_1_3, " << cond << ", hall_3" << endl;
+    // cout << "hall_3, " << cond << ", mt_1_3" << endl;
+    // cout << "mt_1_3, " << cond++ << ", oat_stage[1]" << endl;
+
+    int prev_i = 1;
+    for(int i = 0; i < v.size(); i++){
+        if(v[i]){
+            if(i == 0){
+                continue;
+            }else if(i == 1){
+                continue;
+            }else{
+                int temp = i - prev_i;
+                while(temp--){
+                    cout << prev_loc << ", " << cond << ", hall_3" << endl;
+                    cout << "hall_3, " << cond++ << ", oat_stage[1]" << endl;
+                    cout << "oat_stage, " << cond << ", mt_1_3" << endl;
+                    prev_loc = "mt_1_3";
+                }
+                cout << prev_loc << ", " << cond << ", mt_3_2" << endl;
+                cout << "mt_3_2, " << cond << ", rm_3" << endl;
+                cout << "rm_3, " << cond << ", mt_2_3" << endl;
+                cout << "mt_2_3, " << cond << ", hall_2" << endl;
+                cout << "hall_2, " << cond << ", kd_3" << endl;
+                cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
+                cout << "oat_stage, " << cond << ", mt_2_3" << endl;
+                prev_loc = "mt_2_3"; 
+
+                prev_i = i;
+            }
+        }
+    }
+    cout << prev_loc << ", " << cond << ", rm_3" << endl;
+    cout << "rm_3, " << cond << ", mt_1_3" << endl;
+    cout << "mt_1_3, " << cond << ", rm_1" << endl;
+    cout << "rm_1, " << cond << ", rm_2" << endl;
+    cout << "rm_2, " << cond << ", hall_13_3" << endl;
+    cout << "hall_13_3, " << cond << ", hall_13_2" << endl;
+    cout << "hall_13_2, " << cond << ", hall_13_1" << endl;
+    cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+
+    // cout << "oat_stage, " << cond << ", mt_2_3" << endl;
+    // cout << "mt_2_3, " << cond << ", iit_gate_out_2" << endl;
+    // cout << 
+
+    // cout << "oat_stage, " << cond << ", events_2" << endl;
+    // cout << "events_2_f, " << cond << ", iit_gate_out_2" << endl;
+    // cout << "iit_gate_out_2, " << cond << ", kd_2" << endl;
+    // cout << "kd_2, " << cond << ", oat_stage[0]" << endl;
+    // cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
+    // prev_loc = "oat_stage";
+
+    prev_loc = "oat_stage";
+    max_cond = max(cond, max_cond);
+    return;
+}
 
 void debug(int &cond, string &prev_loc, int &max_cond){
     cout << prev_loc << ", " << cond <<  ", pronite_1" << endl;
@@ -94,14 +257,21 @@ int main(int argc, char* argv[]){
         }
 
         else if (isdigit(code_word[0])) {
-            cout << prev_loc << ", " << cond << ", iit_gate_in_1" << endl;
-            cout << "iit_gate_in_1, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", rm_2" << endl;
-            cout << "rm_2, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
-            prev_loc = "oat_stage";
-            max_cond = max(max_cond, cond);
+            // need to add for negative numbers
+            int num;
+            sscanf(code_word.c_str(), "%d", &num);
+            push_n_to_stack(num,prev_loc,cond,max_cond);
         }
+
+        // else if (isdigit(code_word[0])) {
+        //     cout << prev_loc << ", " << cond << ", iit_gate_in_1" << endl;
+        //     cout << "iit_gate_in_1, " << cond << ", rm_1" << endl;
+        //     cout << "rm_1, " << cond << ", rm_2" << endl;
+        //     cout << "rm_2, " << cond << ", rm_3" << endl;
+        //     cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+        //     prev_loc = "oat_stage";
+        //     max_cond = max(max_cond, cond);
+        // }
         
         else if(code_word == "add"){
             cout << prev_loc << ", " << cond << ", kd_1" << endl;
@@ -385,8 +555,11 @@ int main(int argc, char* argv[]){
             cout << "hall_13_3, " << cond << ", kd_3" << endl;
             cout << "kd_3, " << cond << ", oat_stage[0]" << endl;
             cout << "events_1_t, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
             cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
-            pop(cond, prev_loc, max_cond);
             prev_loc = "oat_stage";
         }
 
