@@ -530,7 +530,7 @@ int main(int argc, char* argv[]){
             cout << "oat_stage, " << cond << ", rm_1" << endl;
             cout << "rm_1, " << cond << ", rm_2" << endl;
             cout << "rm_2, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond++ << ", hall_13_2" << endl;
+            cout << "rm_3, " << cond << ", hall_13_2" << endl;
             cout << "hall_13_2, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
             max_cond = max(max_cond, cond);
@@ -629,36 +629,33 @@ int main(int argc, char* argv[]){
 
         else if(code_word == "rev"){
             cout << prev_loc << ", " << cond << ", pronite_1" << endl; // added eof in mem1
-            cout << "pronite_1, " << cond << ", kd_3" << endl; // mem1--
-            cout << "kd_3, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "pronite_1, " << cond << ", kd_1" << endl; // mem1--
+            cout << "kd_1, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", events_1" << endl; // ---- loop until pointer 1 is at EOF and pointer 3 is at 3 + n+1
             cout << "events_1_f, " << cond << ", mt_3_1" << endl; // mem3=mem1
             cout << "mt_3_1, " << cond << ", rm_3" << endl; // mem3++
-            cout << "rm_3, " << cond << ", rm_2" << endl; // mem2++
-            cout << "rm_2, " << cond << ", kd_1" << endl; // mem1--
+            cout << "rm_3, " << cond << ", kd_1" << endl; // mem1--
             cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
             cout << "events_1_t, " << cond << ", rm_1" << endl; // mem1++ makes pointer 1 at position 1 (ie. 1st eof+1)
             cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", events_1" << endl;
             cout << "events_1_f, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", oat_stage[0]" << endl;
-            cout << "events_1_t, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond << ", rm_2" << endl;
-            cout << "rm_2, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", pronite_1" << endl;
-            cout << "pronite_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "rm_1, " << cond << ", rm_2" << endl; // mem2++
+            cout << "rm_2, " << cond << ", oat_stage[0]" << endl; 
+            cout << "events_1_t, " << cond << ", rm_3" << endl; // clearing the previous array
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", pronite_2" << endl;
             cout << "pronite_2, " << cond << ", rm_2" << endl;
-            cout << "rm_2, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond++ << ", oat_Stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", events_1" << endl;
+            cout << "rm_2, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
             cout << "events_1_f, " << cond << ", rm_1" << endl;
             cout << "rm_1, " << cond << ", oat_stage[0]" << endl;
             cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", hall_13_1" << endl;
-            cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "hall_13_1, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
             max_cond = max(cond, max_cond);
         }

@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    freopen("output1.iitktv", "r", stdin);
+    freopen("output.iitktv", "r", stdin);
 
     map<pair<string, string>, vector<int> > m;
     string s;
