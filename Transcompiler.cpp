@@ -492,7 +492,6 @@ int main(int argc, char* argv[]){
             cout << "lecture_hall_gt_f, " << cond << ", kd_2" << endl;
             cout << "kd_2, " << cond << ", oat_stage[7]" << endl;
             cond += 7;
-            prev_loc = "oat_stage";
 
             cout << "oat_stage, " << cond << ", pronite_1" << endl;
             cout << "pronite_1, " << cond << ", mt_3_1" << endl;
@@ -603,7 +602,8 @@ int main(int argc, char* argv[]){
             cout << "rm_3, " << cond << ", oat_stage[0]" << endl;
             cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", events_2" << endl;
-            cout << "events_2_f, " << cond << ", kd_2" << endl;
+            cout << "events_2_f, " << cond << ", hall_13_2" << endl;
+            cout << "hall_13_2, " << cond << ", kd_2" << endl;
             cout << "kd_2, " << cond << ", oat_stage[0]" << endl;
             cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
 
@@ -617,6 +617,100 @@ int main(int argc, char* argv[]){
             // cout << "iit_gate_out_1, " << cond++ << ", oat_stage[1]" << endl;
 
         // #######################################################################
+
+            cout << "oat_stage, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
+            cout << "events_1_t, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond << ", rm_2" << endl;
+            cout << "rm_2, " << cond << ", oat_stairs_2" << endl;
+            cout << "oat_stairs_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", oat_stairs_2" << endl;
+            cout << "oat_stairs_2, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", mt_3_2" << endl;
+            cout << "mt_3_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", mt_3_1" << endl;
+            cout << "mt_3_1, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", hall_3" << endl;
+            cout << "hall_3, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", mt_1_3" << endl;
+            cout << "mt_1_3, " << cond << ", rm_2" << endl;
+            cout << "rm_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_2" << endl;
+            cout << "rm_2, " << cond << ", hall_2" << endl;
+            cout << "hall_2, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", mt_1_3" << endl;
+            cout << "mt_1_3, " << cond << ", kd_2" << endl;
+            cout << "kd_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", kd_2" << endl;
+            cout << "kd_2, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", hall_3" << endl;
+            cout << "hall_3, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_3" << endl;
+            cout << "rm_3, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond << ", oat_stage[-5]" << endl;
+            cout << "events_1_t, " << cond-5 << ", oat_stage[6]" << endl;
+            cond += 1;
+
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
+            cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", pronite_1" << endl;
+            cout << "pronite_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            cout << "kd_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", mt_1_3" << endl;
+            cout << "mt_1_3, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_3" << endl;
+            cout << "hall_13_3, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_3" << endl;
+            cout << "hall_13_3, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_2" << endl;
+            cout << "hall_13_2, " << cond << ", hall_13_3" << endl;
+            cout << "hall_13_3, " << cond << ", events_2" << endl;
+            cout << "events_2_f, " << cond << ", kd_2" << endl;
+            cout << "kd_2, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", hall_13_3" << endl;
+            cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", hall_13_2" << endl;
+            cout << "hall_13_2, " << cond++ << ", oat_stage[1]" << endl;
+
+            prev_loc = "oat_stage";
             
         }
         
@@ -639,6 +733,19 @@ int main(int argc, char* argv[]){
             cout << "events_2_f, " << cond << ", iit_gate_out_2" << endl;
             cout << "iit_gate_out_2, " << cond << ", kd_2" << endl;
             cout << "kd_2, " << cond << ", oat_stage[0]" << endl;
+            cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
+            prev_loc = "oat_stage";
+            max_cond = max(cond, max_cond);
+        }
+
+        else if (code_word == "pointer3"){
+            cout << prev_loc << ", " << cond << ", rm_2" << endl;
+            cout << "rm_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", events_2" << endl;
+            cout << "events_2_f, " << cond << ", iit_gate_out_2" << endl;
+            cout << "iit_gate_out_2, " << cond << ", kd_2" << endl;
+            cout << "kd_2, " << cond << ", kd_3" << endl;
+            cout << "kd_3, " << cond << ", oat_stage[0]" << endl;
             cout << "events_2_t, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
             max_cond = max(cond, max_cond);
