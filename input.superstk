@@ -1,1 +1,29 @@
-1 2 5 6 and debug
+-100
+if
+    dup 101 add
+    
+    dup output
+    
+    dup 3 mod
+    not if
+        pop
+        0 122 122 105 102 `fizz
+        if outputascii fi pop
+        0
+    fi pop
+    
+    dup 5 mod
+    not if
+        pop
+        0 122 122 117 98 `buzz
+        if outputascii fi pop
+        0
+    fi pop
+    
+    10 outputascii `newline
+    
+    pop
+    1 add
+fi
+
+inputascii

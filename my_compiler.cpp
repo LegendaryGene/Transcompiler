@@ -539,7 +539,8 @@ int main(int argc, char* argv[]){
         else if(code_word == "if"){
             cond_vals.push(cond);
             cout << prev_loc << ", " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond << ", lecture_hall_eq" << endl;
+            cout << "kd_1, " << cond << ", events_1" << endl;
+            cout << "events_1_f, " << cond << ", lecture_hall_eq" << endl;
             cout << "lecture_hall_eq_f, " << cond << ", rm_1" << endl;
             cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
@@ -554,9 +555,10 @@ int main(int argc, char* argv[]){
             cond = prev_cond_val;
             cond_diff = max_cond - cond + 1;
             cout << "lecture_hall_eq_t, " << cond << ", oat_stage[" << cond_diff << "]" << endl;
+            cout << "events_1_t, " << cond << ", oat_stage[" << cond_diff << "]" << endl;
             cond = max_cond + 1;
-            cout << "oat_stage, " << cond << ", rm_2" << endl;
-            cout << "rm_2, " << cond++ << ", oat_stage[1]" << endl;
+            cout << "oat_stage, " << cond << ", rm_1" << endl;
+            cout << "rm_1, " << cond++ << ", oat_stage[1]" << endl;
             prev_loc = "oat_stage";
             max_cond = max(max_cond,cond);
         }
@@ -661,40 +663,51 @@ int main(int argc, char* argv[]){
         }
 
         else if(code_word == "inputascii"){
-            cout << prev_loc << ", " << cond << ", pronite_1" << endl;
-            cout << "pronite_1, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", airstrip_land_2" << endl;
-            cout << "airstrip_land_2, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << prev_loc << ", " << cond << ", pronite_1" << endl;
+            // cout << "pronite_1, " << cond << ", rm_1" << endl;
+            // cout << "rm_1, " << cond << ", airstrip_land_2" << endl;
+            // cout << "airstrip_land_2, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << "oat_stage, " << cond << ", events_1" << endl;
+            // cout << "events_1_f, " << cond << ", rm_1" << endl;
+            // cout << "rm_1, " << cond << ", rm_2" << endl;
+            // cout << "rm_2, " << cond << ", rm_3" << endl;
+            // cout << "rm_3, " << cond << ", oat_stage[0]" << endl;
+            // // after this loop input will be taken and stored, just need to reverse it now.
+            // cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << "oat_stage, " << cond << ", kd_1" << endl; // mem1--
+            // cout << "kd_1, " << cond << ", rm_3" << endl;
+            // cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << "oat_stage, " << cond << ", events_1" << endl;
+            // cout << "events_1_f, " << cond << ", mt_3_1" << endl; // mem3=mem1
+            // cout << "mt_3_1, " << cond << ", rm_3" << endl; // mem3++
+            // cout << "rm_3, " << cond << ", kd_1" << endl; // mem1--
+            // cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
+            // cout << "events_1_t, " << cond << ", kd_3" << endl;
+            // cout << "kd_3, " << cond << ", hall_13_1" << endl;
+            // cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << "oat_stage, " << cond << ", events_1" << endl;
+            // cout << "events_1_f, " << cond << ", mt_1_3" << endl;
+            // cout << "mt_1_3, " << cond << ", rm_1" << endl;
+            // cout << "rm_1, " << cond << ", hall_13_3" << endl;
+            // cout << "hall_13_3, " << cond << ", kd_3" << endl;
+            // cout << "kd_3, " << cond << ", oat_stage[0]" << endl;
+            // cout << "events_1_t, " << cond << ", hall_13_1" << endl;
+            // cout << "hall_13_1, " << cond << ", kd_1" << endl;
+            // cout << "kd_1, " << cond << ", rm_3" << endl;
+            // cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
+            // cout << "oat_stage, " << cond << ", hall_13_1" << endl;
+            // cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+
+            cout << prev_loc << ", " << cond << ", airstrip_land_1" << endl;
+            cout << "airstrip_land_1, " << cond++ << ", oat_stage[1]" << endl;
             cout << "oat_stage, " << cond << ", events_1" << endl;
             cout << "events_1_f, " << cond << ", rm_1" << endl;
             cout << "rm_1, " << cond << ", rm_2" << endl;
             cout << "rm_2, " << cond << ", rm_3" << endl;
             cout << "rm_3, " << cond << ", oat_stage[0]" << endl;
-            // after this loop input will be taken and stored, just need to reverse it now.
-            cout << "events_1_t, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", kd_1" << endl; // mem1--
-            cout << "kd_1, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", events_1" << endl;
-            cout << "events_1_f, " << cond << ", mt_3_1" << endl; // mem3=mem1
-            cout << "mt_3_1, " << cond << ", rm_3" << endl; // mem3++
-            cout << "rm_3, " << cond << ", kd_1" << endl; // mem1--
-            cout << "kd_1, " << cond << ", oat_stage[0]" << endl;
-            cout << "events_1_t, " << cond << ", kd_3" << endl;
-            cout << "kd_3, " << cond << ", hall_13_1" << endl;
-            cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", events_1" << endl;
-            cout << "events_1_f, " << cond << ", mt_1_3" << endl;
-            cout << "mt_1_3, " << cond << ", rm_1" << endl;
-            cout << "rm_1, " << cond << ", hall_13_3" << endl;
-            cout << "hall_13_3, " << cond << ", kd_3" << endl;
-            cout << "kd_3, " << cond << ", oat_stage[0]" << endl;
             cout << "events_1_t, " << cond << ", hall_13_1" << endl;
-            cout << "hall_13_1, " << cond << ", kd_1" << endl;
-            cout << "kd_1, " << cond << ", rm_3" << endl;
-            cout << "rm_3, " << cond++ << ", oat_stage[1]" << endl;
-            cout << "oat_stage, " << cond << ", hall_13_1" << endl;
             cout << "hall_13_1, " << cond++ << ", oat_stage[1]" << endl;
+
             prev_loc = "oat_stage";
         }
 
